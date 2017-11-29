@@ -18,6 +18,20 @@ class PageController: UIViewController {
     let storyLabel = UILabel()
     let firstChoiceButton = UIButton(type: .system)
     let secondChoiceButton = UIButton(type: .system)
+    
+    // MARK: - Initalization functions
+    
+    init(page: Page) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.page = page
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    // MARK: - View loading functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +49,15 @@ class PageController: UIViewController {
             
             if let firstChoice = page.firstChoice {
                 firstChoiceButton.setTitle(firstChoice.title, for: .normal)
+                firstChoiceButton.addTarget(self, action: #selector(PageController.loadFirstChoice), for: .touchUpInside)
             } else {
                 firstChoiceButton.setTitle("Play Again", for: .normal)
+                firstChoiceButton.addTarget(self, action: #selector(PageController.playAgain), for: .touchUpInside)
             }
             
             if let secondChoice = page.secondChoice {
                 secondChoiceButton.setTitle(secondChoice.title, for: .normal)
+                secondChoiceButton.addTarget(self, action: #selector(PageController.loadSecondChoice), for: .touchUpInside)
             }
         }
     }
@@ -91,5 +108,29 @@ class PageController: UIViewController {
             secondChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             secondChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32)
         ])
+    }
+    
+    // MARK: - Helper methods pertaining to navigating story
+    
+    @objc func loadFirstChoice() {
+        if let page = page, let firstChoice = page.firstChoice {
+            let nextPage = firstChoice.page
+            let nextPageController = PageController(page: nextPage)
+            
+            navigationController?.pushViewController(nextPageController, animated: true)
+        }
+    }
+    
+    @objc func loadSecondChoice() {
+        if let page = page, let secondChoice = page.secondChoice {
+            let nextPage = secondChoice.page
+            let nextPageController = PageController(page: nextPage)
+            
+            navigationController?.pushViewController(nextPageController, animated: true)
+        }
+    }
+    
+    @objc func playAgain() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
