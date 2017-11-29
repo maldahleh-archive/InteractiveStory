@@ -20,13 +20,13 @@ class Page {
 }
 
 extension Page {
-    func addStoryWith(title: String, story: Story) -> Page {
+    func addChoiceWith(title: String, story: Story) -> Page {
         let page = Page(story: story)
         
         return addStoryWith(title: title, page: page)
     }
     
-    func addStoryWith(title: String, page: Page) -> Page {
+    func addChoiceWith(title: String, page: Page) -> Page {
         switch (firstChoice, secondChoice) {
         case (.some, .some): return self
         case (.none, .none), (.none, .some): firstChoice = (title: title, page: page)
