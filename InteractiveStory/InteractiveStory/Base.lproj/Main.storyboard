@@ -17,7 +17,24 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beginning" translatesAutoresizingMaskIntoConstraints="NO" id="5ZQ-IJ-pZw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-2n-8b2">
+                                <rect key="frame" x="116" y="589" width="143" height="30"/>
+                                <state key="normal" title="Start your Adventure"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="K8F-PM-26A"/>
+                            <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NVa-ZO-Qmv"/>
+                            <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Swv-Z0-6Hc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cGc-2n-8b2" secondAttribute="bottom" constant="48" id="awc-o7-B3U"/>
+                            <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fg1-du-lVm"/>
+                            <constraint firstItem="cGc-2n-8b2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tgN-LR-hNE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="EqB-ak-laC"/>
@@ -45,4 +62,7 @@
             <point key="canvasLocation" x="-585" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Beginning" width="320" height="568"/>
+    </resources>
 </document>
