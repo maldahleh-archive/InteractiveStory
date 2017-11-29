@@ -12,9 +12,27 @@ class Page {
     let story: Story
     
     var firstChoice: Choice?
-    var secondChoic: Choice?
+    var secondChoice: Choice?
     
     init(story: Story) {
         self.story = story
+    }
+}
+
+extension Page {
+    func addStoryWith(title: String, story: Story) -> Page {
+        let page = Page(story: story)
+        
+        return addStoryWith(title: title, page: page)
+    }
+    
+    func addStoryWith(title: String, page: Page) -> Page {
+        switch (firstChoice, secondChoice) {
+        case (.some, .some): return self
+        case (.none, .none), (.none, .some): firstChoice = (title: title, page: page)
+        case (.some, .none): secondChoice = (title: title, page: page)
+        }
+        
+        return page
     }
 }
