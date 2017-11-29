@@ -7,7 +7,7 @@
 //
 
 struct Adventure {
-    func story(withName name: String) -> Page {
+    static func story(withName name: String) -> Page {
         let returnTrip = Page(story: .returnTrip(name: name))
         
         let touchdown = returnTrip.addChoiceWith(title: "Stop and Investigate", story: .touchDown)

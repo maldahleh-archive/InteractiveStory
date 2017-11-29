@@ -28,14 +28,23 @@
                                     <segue destination="Wdv-n8-JPR" kind="show" identifier="startAdventure" id="6oN-jU-Voh"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ZV-17-FtB">
+                                <rect key="frame" x="24" y="519" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9ZV-17-FtB" secondAttribute="trailing" constant="24" id="JYm-5t-uER"/>
                             <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="K8F-PM-26A"/>
                             <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NVa-ZO-Qmv"/>
                             <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Swv-Z0-6Hc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cGc-2n-8b2" secondAttribute="bottom" constant="48" id="awc-o7-B3U"/>
                             <constraint firstItem="5ZQ-IJ-pZw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fg1-du-lVm"/>
+                            <constraint firstItem="9ZV-17-FtB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="jDI-a1-YQt"/>
+                            <constraint firstItem="cGc-2n-8b2" firstAttribute="top" secondItem="9ZV-17-FtB" secondAttribute="bottom" constant="40" id="pa6-g8-Rrt"/>
                             <constraint firstItem="cGc-2n-8b2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tgN-LR-hNE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
