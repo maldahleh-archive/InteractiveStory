@@ -39,6 +39,7 @@ extension Page {
 
 class PageController: UIViewController {
     var page: Page?
+    let audioManager = AudioManager()
     
     // MARK: - User Interface Properties
     
@@ -145,6 +146,8 @@ class PageController: UIViewController {
             let nextPage = firstChoice.page
             let nextPageController = PageController(page: nextPage)
             
+            audioManager.playSound(for: firstChoice.page.story)
+            
             navigationController?.pushViewController(nextPageController, animated: true)
         }
     }
@@ -153,6 +156,8 @@ class PageController: UIViewController {
         if let page = page, let secondChoice = page.secondChoice {
             let nextPage = secondChoice.page
             let nextPageController = PageController(page: nextPage)
+            
+            audioManager.playSound(for: secondChoice.page.story)
             
             navigationController?.pushViewController(nextPageController, animated: true)
         }
