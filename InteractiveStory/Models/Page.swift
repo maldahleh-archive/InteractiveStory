@@ -23,7 +23,7 @@ extension Page {
     func addChoiceWith(title: String, story: Story) -> Page {
         let page = Page(story: story)
         
-        return addStoryWith(title: title, page: page)
+        return addChoiceWith(title: title, page: page)
     }
     
     func addChoiceWith(title: String, page: Page) -> Page {
