@@ -6,6 +6,10 @@
 //  Copyright © 2017 Mohammed Al-Dahleh. All rights reserved.
 //
 
+enum AdventureError: Error {
+    case noNameEntered
+}
+
 struct Adventure {
     static func story(withName name: String) -> Page {
         let returnTrip = Page(story: .returnTrip(name: name))
